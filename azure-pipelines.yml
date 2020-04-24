@@ -51,6 +51,8 @@ steps:
     command: 'publish'
     publishEndpoint: 'my-npm-connection'
     # publishFeed: tiny
+    publishRegistry: 'useExternalRegistry'
+    customRegistry: 'useNpmrc'
   displayName: 'Publish npmjs'
 
 # - script: |
