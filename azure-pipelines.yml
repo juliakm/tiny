@@ -42,11 +42,14 @@ steps:
 #     npm publish
 #     displayName: 'Publish for release'
 
-- task: Npm@1
-  inputs:
-    command: 'publish'
-    publishEndpoint: 'my-npm-connection'
-    #publishFeed: tiny
+- script: |
+    npm config ls -g
+
+# - task: Npm@1
+#   inputs:
+#     command: 'publish'
+#     publishEndpoint: 'my-npm-connection'
+#     #publishFeed: tiny
 
 
 
