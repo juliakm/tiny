@@ -17,8 +17,8 @@ steps:
 
 - script: |
     npm install
-    npm publish
-  displayName: 'npm install and publish'
+    npm build
+  displayName: 'npm install and build'
 
 # - script: |
 #     npm pack
@@ -34,8 +34,5 @@ steps:
 - task: Npm@1
   inputs:
     command: 'publish'
-    #workingDir: '**'
-    publishRegistry: 'useExternalRegistry'
-    publishPackageMetadata: true
-    publishFeed: juliakm/tiny
-    publishEndpoint: 'my-npm-connection'
+    publishRegistry: 'useFeed'
+    publishFeed: 'juliakm/tiny'
