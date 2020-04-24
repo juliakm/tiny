@@ -44,6 +44,7 @@ steps:
 
 - script: |
     npm config ls -l
+    npm whoami
 
 - task: Npm@1
   inputs:
