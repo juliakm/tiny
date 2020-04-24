@@ -58,7 +58,11 @@ steps:
   displayName: 'Publish npm artifact'
 
 
-- script: npm whoami 
+- script: |
+    npm config set //registry.npmjs.org/:_authToken=${NPMTOKEN}
+    npm config set scope "<@juliakm>"
+    npm config list
+
 #-registry https://pkgs.dev.azure.com/jukullam/_packaging/tiny/npm/registry/
 
 # - script: npm ci
