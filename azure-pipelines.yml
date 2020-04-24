@@ -57,7 +57,7 @@ steps:
   inputs:
     workingFile: .npmrc
     customEndpoint: 'my-npm-connection'
-- script: npm ci
+# - script: npm ci
     # workingFile:
     # customEndpoint: # Optional
 # #- script: npm ci
