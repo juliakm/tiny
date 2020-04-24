@@ -20,9 +20,9 @@ steps:
     npm build
   displayName: 'npm install and build'
 
-- script: |
-    npm pack
-  displayName: 'Package for release'
+# - script: |
+#     npm pack
+#   displayName: 'Package for release'
 
 - task: CopyFiles@2
   inputs:
