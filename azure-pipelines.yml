@@ -30,27 +30,31 @@ steps:
       targetFolder: $(Build.ArtifactStagingDirectory)
   displayName: 'Copy archives to artifacts staging directory'
 
-- task: npmAuthenticate@0
-  inputs:
-    workingFile: '.npmrc'
-    customEndpoint: 'my-npm-connection'
-    #workingFile:
-    #customEndpoint: # Optional
-# - script: npm ci
+# - task: npmAuthenticate@0
+#   inputs:
+#     workingFile: '.npmrc'
+#     customEndpoint: 'my-npm-connection'
+#     # workingFile:
+#     # customEndpoint: # Optional
+# #- script: npm ci
 # - script: npm publish --access=public
 # - script: |
 #     npm publish
 #     displayName: 'Publish for release'
 
-- script: |
-    npm config ls -l
+#- script: npm config ls -l
+# - script: |
+#     npm whoami
 
-# - task: Npm@1
-#   inputs:
-#     command: 'publish'
-#     publishEndpoint: 'my-npm-connection'
-#     #publishFeed: tiny
+- task: Npm@1
+  inputs:
+    command: 'publish'
+    publishEndpoint: 'my-npm-connection'
+    # publishFeed: tiny
+  displayName: 'Publish npmjs'
 
+# - script: |
+#     npm config ls -l
 
 
 # - task: Npm@1
