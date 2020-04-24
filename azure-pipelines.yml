@@ -67,5 +67,6 @@ steps:
     npm config set //registry.npmjs.org/:_authToken=${NPMTOKEN}
     npm config set scope "@juliakm"
     npm config list
+    npm --version
     npm version patch --force
     npm publish --access public
