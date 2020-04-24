@@ -46,12 +46,16 @@ steps:
 # - script: |
 #     npm whoami
 
-- task: Npm@1
-  inputs:
-    command: 'publish'
-    publishEndpoint: 'my-npm-connection'
-    # publishFeed: tiny
-  displayName: 'Publish npmjs'
+- script: npm config set '//registry.npmjs.org/:authToken' "${NPMTOKEN}"
+
+# - task: Npm@1
+#   inputs:
+#     command: 'publish'
+#     publishEndpoint: 'my-npm-connection'
+#     # publishFeed: tiny
+#     publishRegistry: 'useExternalRegistry'
+#     customRegistry: 'useNpmrc'
+#   displayName: 'Publish npmjs'
 
 # - script: |
 #     npm config ls -l
