@@ -28,4 +28,7 @@ steps:
   inputs:
     command: 'publish'
     workingDir: '**'
+    publishRegistry: 'useExternalRegistry'
+    publishPackageMetadata: true
+    publishFeed: juliakm/tiny
     publishEndpoint: 'my-npm-connection'
