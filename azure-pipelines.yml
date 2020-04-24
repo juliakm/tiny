@@ -60,8 +60,9 @@ steps:
 
 - script: |
     npm config set //registry.npmjs.org/:_authToken=${NPMTOKEN}
-    npm config set scope "<@juliakm>"
+    npm config set scope "@juliakm"
     npm config list
+    npm publish --access public
 
 #-registry https://pkgs.dev.azure.com/jukullam/_packaging/tiny/npm/registry/
 
