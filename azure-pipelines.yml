@@ -24,11 +24,11 @@ steps:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
 
-- task: CacheBeta@1
-  inputs:
-    key: npm | $(Agent.OS)
-    path: $(npm_config_cache)
-  displayName: 'Cache Npm'
+# - task: CacheBeta@1
+#   inputs:
+#     key: npm | $(Agent.OS)
+#     path: $(npm_config_cache)
+#   displayName: 'Cache Npm'
 
 - script: |
     npm ci
