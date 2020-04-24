@@ -14,21 +14,25 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: npmAuthenticate@0
+  inputs:
+    workingFile: .npmrc
+    customEndpoint: 'my-npm-connection'
+    
 - task: NodeTool@0
   inputs:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
 
-- task: CacheBeta@1
-  inputs:
-    key: npm | $(Agent.OS)
-    path: $(npm_config_cache)
-  displayName: 'Cache Npm'
+# - task: CacheBeta@1
+#   inputs:
+#     key: npm | $(Agent.OS)
+#     path: $(npm_config_cache)
+#   displayName: 'Cache Npm'
 
 - script: |
-    npm install
-    npm build
-  displayName: 'npm install and build'
+    npm ci
+  displayName: 'npm install'
 
 - script: |
     npm pack
@@ -53,11 +57,10 @@ steps:
     artifactName: npm
   displayName: 'Publish npm artifact'
 
-- task: npmAuthenticate@0
-  inputs:
-    workingFile: .npmrc
-    customEndpoint: 'my-npm-connection'
-- script: npm ci
+
+#- script: npm publish -registry https://pkgs.dev.azure.com/jukullam/_packaging/tiny/npm/registry/
+
+# - script: npm ci
     # workingFile:
     # customEndpoint: # Optional
 # #- script: npm ci
@@ -70,7 +73,7 @@ steps:
 # - script: |
 #     npm whoami
 
-- script: | 
+#- script: | 
     # npm config set '//registry.npmjs.org/:authToken' "${NPMTOKEN}"
     # npm login
     # npm publish --access=public
