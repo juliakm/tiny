@@ -43,7 +43,7 @@ steps:
 #     displayName: 'Publish for release'
 
 - script: |
-    npm config ls -g
+    npm config ls -l
 
 # - task: Npm@1
 #   inputs:
