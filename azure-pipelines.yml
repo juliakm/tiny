@@ -21,7 +21,7 @@ steps:
 
 - task: CacheBeta@1
   inputs:
-    key: npm | $(Agent.OS) | package-lock.json
+    key: npm | $(Agent.OS)
     path: $(npm_config_cache)
   displayName: 'Cache Npm'
 
