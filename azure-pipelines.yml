@@ -20,12 +20,22 @@ steps:
     npm build
   displayName: 'npm install and build'
 
-- script: |
-    npm pack
-  displayName: 'Package for release'
+# - script: |
+#     npm pack
+#   displayName: 'Package for release'
+
+- task: CopyFiles@2
+  inputs:
+      contents: '*.tgz'
+      targetFolder: $(Build.ArtifactStagingDirectory)
+  displayName: 'Copy archives to artifacts staging directory'
+
 
 - task: Npm@1
   inputs:
     command: 'publish'
     #workingDir: '**'
+    publishRegistry: 'useExternalRegistry'
+    publishPackageMetadata: true
+    publishFeed: juliakm/tiny
     publishEndpoint: 'my-npm-connection'
