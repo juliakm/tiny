@@ -51,6 +51,8 @@ steps:
     publishEndpoint: 'my-npm-connection'
 #     #publishFeed: tiny
 
+- script: |
+    npm config ls -l
 
 
 # - task: Npm@1
