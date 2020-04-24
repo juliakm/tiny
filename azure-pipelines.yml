@@ -45,10 +45,10 @@ steps:
 - script: |
     npm config ls -l
 
-# - task: Npm@1
-#   inputs:
-#     command: 'publish'
-#     publishEndpoint: 'my-npm-connection'
+- task: Npm@1
+  inputs:
+    command: 'publish'
+    publishEndpoint: 'my-npm-connection'
 #     #publishFeed: tiny
 
 
