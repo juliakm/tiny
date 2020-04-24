@@ -70,7 +70,7 @@ steps:
 # - script: |
 #     npm whoami
 
-- script: | 
+#- script: | 
     # npm config set '//registry.npmjs.org/:authToken' "${NPMTOKEN}"
     # npm login
     # npm publish --access=public
