@@ -31,7 +31,16 @@ steps:
   displayName: 'Copy archives to artifacts staging directory'
 
 
+- task: Npm@1
+  inputs:
+    command: 'publish'
+    publishEndpoint: 'my-npm-connection'
+    publishFeed: tiny
+
+
+
 # - task: Npm@1
 #   inputs:
-#     command: 'publish'
-#     publishEndpoint: 'my-npm-connection'
+#     command: publish
+#     publishRegistry: useFeed
+#     publishFeed: feedName
