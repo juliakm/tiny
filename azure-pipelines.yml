@@ -15,6 +15,7 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- script: cat /home/vsts/.npm/_logs/2020-04-24T18_50_50_974Z-debug.log
 - script: |
     npm install
     npm build
