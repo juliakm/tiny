@@ -9,5 +9,8 @@
     "tiny",
     "npm",
     "package"
-    ]
+    ],
+  "scripts": {
+    "release": "standard-version"
+  }
 }
