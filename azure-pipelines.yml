@@ -39,6 +39,10 @@ steps:
     npm pack
   displayName: 'Package for release'
 
+- bash: |
+    v=`node -p "const p = require('./package.json'); p.version;"`
+    echo "##vso[task.setvariable variable=packageVersion]$v"
+
 - task: CopyFiles@2
   inputs:
       contents: '*.tgz'
@@ -65,42 +69,3 @@ steps:
     npm config list
     npm version patch --force
     npm publish --access public
-
-#-registry https://pkgs.dev.azure.com/jukullam/_packaging/tiny/npm/registry/
-
-# - script: npm ci
-    # workingFile:
-    # customEndpoint: # Optional
-# #- script: npm ci
-# - script: npm publish --access=public
-# - script: |
-#     npm publish
-#     displayName: 'Publish for release'
-
-#- script: npm config ls -l
-# - script: |
-#     npm whoami
-
-#- script: | 
-    # npm config set '//registry.npmjs.org/:authToken' "${NPMTOKEN}"
-    # npm login
-    # npm publish --access=public
-
-# - task: Npm@1
-#   inputs:
-#     command: 'publish'
-#     publishEndpoint: 'my-npm-connection'
-#     # publishFeed: tiny
-#     publishRegistry: 'useExternalRegistry'
-#     customRegistry: 'useNpmrc'
-#   displayName: 'Publish npmjs'
-
-# - script: |
-#     npm config ls -l
-
-
-# - task: Npm@1
-#   inputs:
-#     command: publish
-#     publishRegistry: useFeed
-#     publishFeed: feedName
