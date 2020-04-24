@@ -58,7 +58,7 @@ steps:
   displayName: 'Publish npm artifact'
 
 
-- script: npm publish 
+- script: npm whoami 
 #-registry https://pkgs.dev.azure.com/jukullam/_packaging/tiny/npm/registry/
 
 # - script: npm ci
