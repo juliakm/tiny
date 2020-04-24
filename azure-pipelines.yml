@@ -19,3 +19,13 @@ steps:
     npm install
     npm build
   displayName: 'npm install and build'
+
+- script: |
+    npm pack
+  displayName: 'Package for release'
+
+- task: Npm@1
+  inputs:
+    command: 'publish'
+    workingDir: '**'
+    publishEndpoint: 'my-npm-connection'
