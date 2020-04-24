@@ -34,8 +34,8 @@ steps:
   inputs:
     workingFile: '.npmrc'
     customEndpoint: 'my-npm-connection'
-    workingFile:
-    customEndpoint: # Optional
+    # workingFile:
+    # customEndpoint: # Optional
 # - script: npm ci
 # - script: npm publish --access=public
 # - script: |
