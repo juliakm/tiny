@@ -31,9 +31,8 @@ steps:
   displayName: 'Cache Npm'
 
 - script: |
-    npm install
-    npm build
-  displayName: 'npm install and build'
+    npm ci
+  displayName: 'npm install'
 
 - script: |
     npm pack
