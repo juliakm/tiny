@@ -32,7 +32,7 @@ steps:
 
 - task: npmAuthenticate@0
   inputs:
-    workingFile: 
+    workingFile: '.npmrc'
     customEndpoint: 'my-npm-connection'
     #workingFile:
     #customEndpoint: # Optional
