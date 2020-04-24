@@ -46,14 +46,14 @@ steps:
     npm config ls -l
     npm whoami
 
-- task: Npm@1
-  inputs:
-    command: 'publish'
-    publishEndpoint: 'my-npm-connection'
-#     #publishFeed: tiny
+# - task: Npm@1
+#   inputs:
+#     command: 'publish'
+#     publishEndpoint: 'my-npm-connection'
+# #     #publishFeed: tiny
 
-- script: |
-    npm config ls -l
+# - script: |
+#     npm config ls -l
 
 
 # - task: Npm@1
