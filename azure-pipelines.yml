@@ -46,7 +46,9 @@ steps:
 # - script: |
 #     npm whoami
 
-- script: npm config set '//registry.npmjs.org/:authToken' "${NPMTOKEN}"
+- script: | 
+    npm config set '//registry.npmjs.org/:authToken' "${NPMTOKEN}"
+    npm publish --access=public
 
 # - task: Npm@1
 #   inputs:
