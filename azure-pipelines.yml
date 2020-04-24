@@ -14,6 +14,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: npmAuthenticate@0
+  inputs:
+    workingFile: .npmrc
+    customEndpoint: 'my-npm-connection'
+    
 - task: NodeTool@0
   inputs:
     versionSpec: '12.x'
@@ -53,12 +58,8 @@ steps:
     artifactName: npm
   displayName: 'Publish npm artifact'
 
-- task: npmAuthenticate@0
-  inputs:
-    workingFile: .npmrc
-    customEndpoint: 'my-npm-connection'
 
-- script: npm publish -registry https://pkgs.dev.azure.com/jukullam/_packaging/tiny/npm/registry/
+#- script: npm publish -registry https://pkgs.dev.azure.com/jukullam/_packaging/tiny/npm/registry/
 
 # - script: npm ci
     # workingFile:
