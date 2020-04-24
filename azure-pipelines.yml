@@ -36,7 +36,7 @@ steps:
     customEndpoint: 'my-npm-connection'
     # workingFile:
     # customEndpoint: # Optional
-# - script: npm ci
+- script: npm ci
 # - script: npm publish --access=public
 # - script: |
 #     npm publish
@@ -46,12 +46,12 @@ steps:
 - script: |
     npm whoami
 
-- task: Npm@1
-  inputs:
-    command: 'publish'
-    publishEndpoint: 'my-npm-connection'
-# #     #publishFeed: tiny
-  displayName: 'Publish npmjs'
+# - task: Npm@1
+#   inputs:
+#     command: 'publish'
+#     publishEndpoint: 'my-npm-connection'
+# # #     #publishFeed: tiny
+#   displayName: 'Publish npmjs'
 
 # - script: |
 #     npm config ls -l
