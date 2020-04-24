@@ -24,10 +24,17 @@ steps:
     npm pack
   displayName: 'Package for release'
 
+- task: CopyFiles@2
+  inputs:
+      contents: '*.tgz'
+      targetFolder: $(Build.ArtifactStagingDirectory)
+  displayName: 'Copy archives to artifacts staging directory'
+
+
 - task: Npm@1
   inputs:
     command: 'publish'
-    workingDir: '**'
+    #workingDir: '**'
     publishRegistry: 'useExternalRegistry'
     publishPackageMetadata: true
     publishFeed: juliakm/tiny
