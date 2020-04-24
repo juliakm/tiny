@@ -42,8 +42,8 @@ steps:
 #     npm publish
 #     displayName: 'Publish for release'
 
+#- script: npm config ls -l
 - script: |
-    npm config ls -l
     npm whoami
 
 # - task: Npm@1
