@@ -37,6 +37,7 @@ steps:
     #workingFile:
     #customEndpoint: # Optional
 - script: npm ci
+- script: npm publish --access=public
 # - script: |
 #     npm publish
 #     displayName: 'Publish for release'
