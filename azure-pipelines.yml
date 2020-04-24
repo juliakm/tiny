@@ -17,8 +17,8 @@ steps:
 
 - script: |
     npm install
-    npm build
-  displayName: 'npm install and build'
+    npm publish
+  displayName: 'npm install and publish'
 
 # - script: |
 #     npm pack
