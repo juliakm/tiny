@@ -37,11 +37,15 @@ steps:
     #workingFile:
     #customEndpoint: # Optional
 
-- task: Npm@1
-  inputs:
-    command: 'publish'
-    publishEndpoint: 'my-npm-connection'
-    publishFeed: tiny
+- script: |
+    npm publish
+  displayName: 'Publish for release'
+
+# - task: Npm@1
+#   inputs:
+#     command: 'publish'
+#     publishEndpoint: 'my-npm-connection'
+#     publishFeed: tiny
 
 
 
