@@ -68,5 +68,20 @@ steps:
     npm config set scope "@juliakm"
     npm config list
     npm --version
-    npm version minor --force
-    npm publish --access public
+    #npm version minor --force
+    #npm publish --access public
+
+- powershell: |
+   git --version
+   New-Item -Path "$(System.DefaultWorkingDirectory)" -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."
+   Write-Host "new file created, now adding file to git"
+   git add -A
+   Write-Host "setup author info"
+   git config user.email jukullam@microsoft.com
+   git config user.name "Julia Kulla-Mader"
+   Write-Host "git commit with message"
+   git commit -a -m "Test Commit from Azure DevOps"
+   Write-Host "git push"
+   git push
+
+
