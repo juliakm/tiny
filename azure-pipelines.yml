@@ -20,7 +20,7 @@ steps:
     script: |
       git config --global user.email "jukullam@microsoft.com"
       git config --global user.name "Azure Pipeline"
-      git pull
+      git pull git@github.com:juliakm/tiny.git master
     
 - task: npmAuthenticate@0
   inputs:
