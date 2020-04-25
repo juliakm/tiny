@@ -1,6 +1,6 @@
 {
   "name": "@juliakm/tiny",
-  "version": "6.2.2",
+  "version": "7.0.0",
   "description": "Removes all spaces from a string",
   "license": "MIT",
   "repository": "juliakm/tiny",
@@ -9,5 +9,5 @@
     "tiny",
     "npm",
     "package"
-    ]
+  ]
 }
