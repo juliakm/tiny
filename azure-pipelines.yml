@@ -78,7 +78,7 @@ steps:
     npm config set scope "@juliakm"
     npm config list
     npm --version
-    npm version major --force
+    npm version minor --force
     npm publish --access public
 
 - task: CmdLine@2
