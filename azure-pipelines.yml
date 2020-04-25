@@ -73,7 +73,10 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'git add package.json'
+    script: |
+      git add package.json
+      git commit -m "adding package.json"
+      git push origin master
 
 
 
