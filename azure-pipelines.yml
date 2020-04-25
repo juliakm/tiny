@@ -73,7 +73,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'git status'
+    script: 'git add package.json'
 
 
 
