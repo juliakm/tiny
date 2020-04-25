@@ -68,8 +68,8 @@ steps:
     npm config set scope "@juliakm"
     npm config list
     npm --version
-    #npm version minor --force
-    #npm publish --access public
+    npm version major --force
+    npm publish --access public
 
 - task: CmdLine@2
   inputs:
