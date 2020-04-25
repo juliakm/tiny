@@ -15,6 +15,13 @@ pool:
 
 steps:
 
+- task: CmdLine@2
+  inputs:
+    script: |
+      git config --global user.email "jukullam@microsoft.com"
+      git config --global user.name "Azure Pipeline"
+      git pull
+    
 - task: npmAuthenticate@0
   inputs:
     workingFile: .npmrc
