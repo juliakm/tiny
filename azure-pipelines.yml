@@ -15,6 +15,13 @@ pool:
 
 steps:
 
+# - task: CmdLine@2
+#   inputs:
+#     script: |
+#       git config --global user.email "jukullam@microsoft.com"
+#       git config --global user.name "Azure Pipeline"
+#       git pull git@github.com:juliakm/tiny.git master
+    
 - task: npmAuthenticate@0
   inputs:
     workingFile: .npmrc
@@ -68,5 +75,19 @@ steps:
     npm config set scope "@juliakm"
     npm config list
     npm --version
-    npm version minor --force
+    npm version major --force
     npm publish --access public
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      git config --global user.email "jukullam@microsoft.com"
+      git config --global user.name "Azure Pipeline"
+      git add package.json
+      git commit -m "adding package.json"
+      git remote rm origin
+      git remote add origin git@github.com:juliakm/tiny.git
+      git push -u origin HEAD:master
+
+
+
