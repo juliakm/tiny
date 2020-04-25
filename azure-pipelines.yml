@@ -74,6 +74,8 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
+      git config --global user.email "jukullam@microsoft.com"
+      git config --global user.name "Azure Pipeline"
       git add package.json
       git commit -m "adding package.json"
       git push origin master
