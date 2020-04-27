@@ -36,9 +36,9 @@ steps:
     npm pack
   displayName: 'Package for release'
 
-# - bash: |
-#     v=`node -p "const p = require('./package.json'); p.version;"`
-#     echo "##vso[task.setvariable variable=packageVersion]$v"
+- bash: |
+    v=`node -p "const p = require('./package.json'); p.version;"`
+    echo "##vso[task.setvariable variable=packageVersion]$v"
 
 - task: CopyFiles@2
   inputs:
@@ -65,7 +65,7 @@ steps:
     npm config set scope "@juliakm"
     npm config list
     npm --version
-    npm version minor --force
+    npm version minor --force # update version
     npm publish --access public
 
 
