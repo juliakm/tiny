@@ -3,8 +3,8 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-# variables:
-#   CI: true
+variables:
+    MAP_NPMTOKEN: $(NPMTOKEN) # Mapping secret var
 
 trigger:
 - master
@@ -58,7 +58,7 @@ steps:
   displayName: 'Publish npm artifact'
 
 - script: |
-    npm config set //registry.npmjs.org/:_authToken=${NPMTOKEN}
+    npm config set //registry.npmjs.org/:_authToken=${MAP_NPMTOKEN}
     npm config set scope "@juliakm"
     # npm config list
     # npm --version
