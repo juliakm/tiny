@@ -5,7 +5,7 @@
 
 variables:
   CI: true
- # npm_config_cache: $(Pipeline.Workspace)/.npm
+  npm_config_cache: $(Pipeline.Workspace)/.npm
 
 trigger:
 - master
